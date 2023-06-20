@@ -22,7 +22,7 @@ const Header = () => {
     <header
       className={`${
         isActive ? "bg-white py-y shadow-md" : "bg-none py-6"
-      } fixed w-full z-10 transition-all`}
+      } fixed p-4 w-full z-10 transition-all`}
     >
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
@@ -34,7 +34,7 @@ const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="cursor-pointer flex relative "
         >
-          <BsBag></BsBag>
+          <BsBag className="w-8 h-8"></BsBag>
           <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
             {itemAmount}
           </div>
