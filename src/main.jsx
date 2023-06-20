@@ -6,6 +6,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Main from "./Layout/Main";
 import ProductProvider from "./contexts/ProductProvider";
 import SidebarProvider from "./contexts/SidebarProvider";
+import CartProvider from "./contexts/CartProvider";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +17,13 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <SidebarProvider>
-    <ProductProvider>
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
-    </ProductProvider>
-  </SidebarProvider>
+  <CartProvider>
+    <SidebarProvider>
+      <ProductProvider>
+        <React.StrictMode>
+          <RouterProvider router={router} />
+        </React.StrictMode>
+      </ProductProvider>
+    </SidebarProvider>
+  </CartProvider>
 );
